@@ -1,5 +1,5 @@
 <h1>Journal Page</h1>
 
 <% @categories.each do |category| %>
-    <p> <%= category.name%> </p>
+    <p> <%= link_to category.name,new_journal_entry_path(category) %> </p>
     <%end%>

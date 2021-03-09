@@ -1,5 +1,5 @@
 <h1> Heres all your past Journals </h1>
 
 <% @journal_entries.each do |journal_entry| %>
-<p> <%= journal_entry.category.name%> </p>
+<p> <%= link_to journal_entry.category.name, journal_entry%> </p>
 <%end%>
