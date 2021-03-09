@@ -6,7 +6,7 @@ class JournalEntriesController < ApplicationController
 
     def show
         @journal_entry = JournalEntry.find(params[:id])
-        # @categories = @JournalEntry.categories
+       
     end
 
     
@@ -17,18 +17,24 @@ class JournalEntriesController < ApplicationController
     
     def create
         @journal_entry = JournalEntry.create(journal_entry_params)
+        # need to find out why new form doesnt show
         redirect_to journal_entries_path
+    end
+
+    def edit
+        @journal_entry = JournalEntry.find(params[:id])
     end
 
     def update
         @journal_entry = JournalEntry.find(params[:id])
         @journal_entry = JournalEntry.update(journal_entry_params)
+        redirect_to journal_entry_path
     end
 
-    def delete
+    def destroy
         @journal_entry = JournalEntry.find(params[:id])
         @journal_entry.destroy
-        redirect_to 
+        redirect_to categories_path
     end
 
     private

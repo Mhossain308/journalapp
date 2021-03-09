@@ -1,3 +1,6 @@
 <h3> Content Page </h3>
 
 <%= @journal_entry.content %>
+
+<p><%= button_to "edit", edit_journal_entry_path(@journal_entry), :method => :get %></p>
+<p><%= button_to "delete", journal_entry_path(@journal_entry), :method => :delete %></p>
