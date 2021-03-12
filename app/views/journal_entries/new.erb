@@ -1,13 +1,13 @@
 <h2> New Journal <h2>
 
+
+
 <%=form_for @journal_entry do |f| %>
     <%=f.label :category %>
-    <%= f.collection_select :category_id, @categories, :id, :name %>
-    <p><%=f.label :content %></p>
+    <%=f.collection_select :category_id, @categories, :id, :name%>
+    <p><%=f.hidden_field :user_id, value: @current_user %></p>
+    <%=f.label :content %>
     <p><%=f.text_field :content %></p>
-
-
-    
    
     <%= f.submit "Finish"%>
     
