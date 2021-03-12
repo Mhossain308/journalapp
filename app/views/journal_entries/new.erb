@@ -4,11 +4,15 @@
 
 <%=form_for @journal_entry do |f| %>
     <%=f.label :category %>
-    <%=f.collection_select :category_id, @categories, :id, :name%>
-    <p><%=f.hidden_field :user_id, value: @current_user %></p>
-    <%=f.label :content %>
-    <p><%=f.text_field :content %></p>
+    <%=f.collection_select :category_id, @categories, :id, :name%><br>
+  <%=f.hidden_field :user_id, value: @current_user %><br>
+    <div class="animated bounce"><%=f.label :content %></div>
+    <p><%=f.text_area :content, :cols => "100", :rows => "25" %></p>
+    
+    
    
     <%= f.submit "Finish"%>
     
     <%end%>
+
+    

@@ -2,4 +2,8 @@
 
 <% @journal_entries.each do |journal_entry| %>
 <p> <%= link_to journal_entry.category.name, journal_entry%> </p>
+
+
 <%end%>
+
+<div class="animated bounce"><%= button_to "Write Another", new_journal_entry_path(@journal_entry), :method => :get %></div>
